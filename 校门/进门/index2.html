@@ -119,42 +119,42 @@
       
       <iframe name="posthere" frameborder="0" width="0" height="0"></iframe>
       
-    <script>
-      var c_time = new Date();
-      str = '时间：';
+      <script>
+        var c_time = new Date();
+        str = '时间：';
 
-      RQ= c_time.getFullYear() + '-';
-      RQ+= (((c_time.getMonth() + 1)<10)?('0'+(c_time.getMonth() + 1)):(c_time.getMonth() + 1)) + '-';
-      RQ+= c_time.getDate();
-      str+= RQ + ' ';
-      RQ = RQ+'--'+RQ;
-      str+= completeDate(c_time.getHours()) + ':' + completeDate(c_time.getMinutes()) + ':' + completeDate(c_time.getSeconds());
-      document.getElementById('showtime').innerHTML=str;
+        RQ= c_time.getFullYear() + '-';
+        RQ+= (((c_time.getMonth() + 1)<10)?('0'+(c_time.getMonth() + 1)):(c_time.getMonth() + 1)) + '-';
+        RQ+= c_time.getDate();
+        str+= RQ + ' ';
+        RQ = RQ+'--'+RQ;
+        str+= completeDate(c_time.getHours()) + ':' + completeDate(c_time.getMinutes()) + ':' + completeDate(c_time.getSeconds());
+        document.getElementById('showtime').innerHTML=str;
 
-      function applyForm() {
-          var c_time = new Date();
-          str= c_time.getFullYear() + '-';
-          str+= c_time.getMonth() + 1 + '-';
-          str+= c_time.getDate() + ' ';
-          var XM = document.forms["Costum"]["XM"].value;
-          var SH = document.forms["Costum"]["SH"].value;
-          var DH = document.forms["Costum"]["DH"].value;
-          var LO = document.forms["Costum"]["select_ic"].value;
+        function applyForm() {
+            var c_time = new Date();
+            str= c_time.getFullYear() + '-';
+            str+= c_time.getMonth() + 1 + '-';
+            str+= c_time.getDate() + ' ';
+            var XM = document.forms["Costum"]["XM"].value;
+            var SH = document.forms["Costum"]["SH"].value;
+            var DH = document.forms["Costum"]["DH"].value;
+            var LO = document.forms["Costum"]["select_ic"].value;
 
-          document.getElementById('xm').innerHTML=XM;
-          document.getElementById('lxr').innerHTML=XM;
-          document.getElementById('xh').innerHTML=SH;
-          document.getElementById('dh').innerHTML=DH;
+            document.getElementById('xm').innerHTML=XM;
+            document.getElementById('lxr').innerHTML=XM;
+            document.getElementById('xh').innerHTML=SH;
+            document.getElementById('dh').innerHTML=DH;
 
-          document.getElementById("icon").src="./static/picture/"+LO+".png";
+            document.getElementById("icon").src="./static/picture/"+LO+".png";
 
-          window.scrollTo(0,0)
-          return;
-      }
-      function completeDate(value) {
-        return value < 10 ? "0"+value:value;
-      }
+            window.scrollTo(0,0)
+            return;
+        }
+        function completeDate(value) {
+          return value < 10 ? "0"+value:value;
+        }
 
-    </script>
+      </script>
 </body>
 </html>
