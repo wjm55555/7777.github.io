@@ -1,5 +1,4 @@
 <!doctype html>
-<!doctype html>
 <html lang="zh-CN">
 <head>
     <meta charset="utf-8">
@@ -37,15 +36,14 @@
 <div id="app">
             <div class="card border-0 text-center" style="color: #07c160">
             <div class="card-body">
-                <h2 class="card-title" style="font-size: 1.8em;">沈航学生出门登记</h2>
-
+                <h2 class="card-title" style="font-size: 1.8em;">沈航学生进门登记</h2>
                 <i class="animated infinite pulse fa p-4">
                   <div class="box">
-                  <p contenteditable="true" class="word">114514</p>
-                  <img contenteditable="false" id="icon" src="static/picture/cc8.png"></div></i>
+                    <p contenteditable="true" class="word">114514</p>
+                    <img id="icon" src="static/picture/cc7.png"></div></i>
                 <p id="showtime" class="card-text" style="font-size: 1.4em;">
-                    时间：2020-09-26 15:40:59                </p>
-             <p class="card-text" style="font-size: 1.4em;"> 今日第1次使用出门                </p>
+                    时间：2020-09-01 15:50:43                </p>
+              <p class="card-text" style="font-size: 1.4em;">今日第1次使用进门                </p>
 
                   <p class="card-text" style="font-size: 1.4em;">                </p>
             </div>
@@ -53,71 +51,74 @@
 
         <ul class="list-group list-group-flush" style="background-color: #07c160">
             <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
-                <div style="min-width: 4em; text-align-last: justify;">姓名</div>：<div id='xm' contenteditable="true">吴佳明</div>
+                <div style="min-width: 4em; text-align-last: justify;">姓名</div>：<div id="xm" contenteditable="true">吴佳明</div>
             </li>
             <li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
-                <div style="min-width: 4em; text-align-last: justify;">学号</div>：<div id='xh' contenteditable="true">193408060227</div>
+                <div style="min-width: 4em; text-align-last: justify;">学号</div>：<div id="xh" contenteditable="true">193408060227</div>
+            </li>
+
+				<li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
+				    <div style="min-width: 4em; text-align-last: justify;">体温</div>：<div contenteditable="true">36.7</div>
             </li>
 
 
 
 				<li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
-				   <div style="min-width: 4em; text-align-last: justify;">电话</div>：<div id='dh' contenteditable="true">17628150120</div>
+				   <div style="min-width: 4em; text-align-last: justify;">电话</div>：<div id="dh" contenteditable="true">17628150120</div>
             </li>
 
 
+
+
 				<li class="list-group-item bg-transparent d-flex text-white font-weight-bold">
-				    <div style="min-width: 4em; text-align-last: justify;">联&nbsp;&nbsp;系&nbsp;人</div>：<div id='lxr' contenteditable="true">吴佳明</div>
+				   <div style="min-width: 4em; text-align-last: justify;">联系人</div>：<div id="lxr" contenteditable="true">吴佳明</div>
             </li>
 
   </ul>
-    </div>
-  <div class="STYLE1">
-    <div align="center" class="STYLE2">信息网络中心提供相关技术支持</div>
-
-  </div>
-  <p>
-    <img src="static/picture/cc2.png">
-  </p>
-  <p>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-    <form name="Costum" onsubmit="return applyForm()" target="posthere">
-      姓名:<br>
-      <input type="text" name="XM" value="王萌涯">
-      <br>
-      学号:<br>
-      <input type="text" name="SH" value="李嘉峰">
-      <br>
-      电话:<br>
-      <input type="text" name="DH" value="郭婷婷">
-      <br>
-      状态:<br>
-      <select class="dropdown-select" name="select_ic">
-                  <option value="cc8">白底蓝直</option>
-                  <option value="cc5">白底绿斜</option>
-                  <option value="cc4">白底绿直</option>
-                  <option value="cc1">绿底白斜</option>
-                  <option value="cc3">绿底白直</option>
-                  <option value="ccs">蓝底绿直</option>
-      </select>
+</div>
+      <div class="STYLE1">
+        <div align="center" class="STYLE2">信息网络中心提供相关技术支持</div>
+      </div>
+      <p>
+        <img src="static/picture/cc2.png">
+      </p>
+      <p>
       <br>
       <br>
-      <input type="submit" value="应用">
-    </form>
-  
-  <iframe name="posthere" frameborder="0" width="0" height="0"></iframe>
-  
-
-
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+        <form name="Costum" onsubmit="return applyForm()" target="posthere">
+          姓名:<br>
+          <input type="text" name="XM" value="宋琪达">
+          <br>
+          学号:<br>
+          <input type="text" name="SH" value="郭婷婷">
+          <br>
+          电话:<br>
+          <input type="text" name="DH" value="朱洪巨">
+          <br>
+          状态:<br>
+          <select class="dropdown-select" name="select_ic">
+                      <option value="cc7">蓝底白直</option>
+                      <option value="cc5">白底绿斜</option>
+                      <option value="cc4">白底绿直</option>
+                      <option value="cc1">绿底白斜</option>
+                      <option value="cc3">绿底白直</option>
+                      <option value="ccs">蓝底绿直</option>
+          </select>
+          <br>
+          <br>
+          <input type="submit" value="应用">
+        </form>
+      
+      <iframe name="posthere" frameborder="0" width="0" height="0"></iframe>
+      
       <script>
         var c_time = new Date();
         str = '时间：';
