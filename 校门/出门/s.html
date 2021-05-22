@@ -1,73 +1,42 @@
-作者：刘欢
-链接：https://www.zhihu.com/question/58204344/answer/156608053
-来源：知乎
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+!doctype html>
+<html lang="en">
 
-<!doctype html>
-<html>
 <head>
-<meta charset="UTF-8">
-<title>HTML5 Example</title>
-<style type="text/css">
-body {
-	background:#ECF0F1;
-	margin:50px;
-	text-align:center;
-}
-#video, #canvas{
-	display:inline-block;
-	background:#BDC3C7;
-}
-button{
-	font-size:32px;
-	padding:10px 100px;
-	display:block;
-	margin:20px auto;
-	clear:both;
-	border-radius:6px;
-	background:#3498DB;
-	border:0;
-	color:#FFF;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>摄像头调用1</title>
 </head>
 
 <body>
-	<div><a href="http://sao315.com/w/api/saoyisao?redirect_url=http://****.com/rl?code=1">扫一扫</a></div>
-<video id="video" width="400" height="300" autoplay></video>
-<canvas id="canvas" width="400" height="300"></canvas>
-<button id="capture">Capture</button> 
-<script type="text/javascript">
-var capture = document.getElementById("capture");
-var video = document.getElementById("video");
-var canvas = document.getElementById("canvas");
-var context = canvas.getContext("2d");
-navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
-window.URL = window.URL || window.webkitURL;
-navigator.getUserMedia({video:true}, onSuccess, onError); //调用摄像头捕捉视频信息
-capture.onclick = function(e){
-	e.preventDefault();
-	context.drawImage(video, 0, 0, 400, 300);  
-	var img = context.getImageData(0, 0, 400, 300);
-	var picLength = 400 * 300; //获得像素个数
-	for (var i = 0; i < picLength * 4; i += 4) {
-			var myRed = img.data[i]; //第一个字节单位代表红色
-			var myGreen = img.data[i + 1]; //第一个字节单位代表绿色
-			var myBlue = img.data[i + 2]; //第一个字节单位代表蓝色
-			var myGray = parseInt((myRed + myGreen + myBlue) / 3); 
-			//img.data[i] = 0; //去掉所有红色
-			img.data[i] = myGray;
-			img.data[i + 1] = myGray;
-			img.data[i + 2] = myGray;
-		}
-	context.putImageData(img, 0, 0);
-}
-function onSuccess(stream){
-	video.src = window.URL.createObjectURL(stream);  
-}
-function onError(){
-	mystatus.innerHTML = "获取视频出错。"
-}
-</script>
+    <video id="v"></video>
+    <script>
+        !(function () {
+            function userMedia() {
+                return navigator.getUserMedia = navigator.getUserMedia ||
+                    navigator.webkitGetUserMedia ||
+                    navigator.mozGetUserMedia ||
+                    navigator.msGetUserMedia || null;
+            }
+            if (userMedia()) {
+                var constraints = {
+                    video: true,
+                    audio: false
+                };
+                var media = navigator.getUserMedia(constraints, function (stream) {
+                    var v = document.getElementById('v');
+                    var url = window.URL || window.webkitURL;
+                    v.src = url ? url.createObjectURL(stream) : stream;
+                    v.play();
+                }, function (error) {
+                    console.log("ERROR");
+                    console.log(error);
+                });
+            } else {
+                console.log("不支持");
+            }
+        })();
+    </script>
 </body>
 </html>
+————————————————
+版权声明：本文为CSDN博主「JuLi距离」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/qq_33699981/article/details/80210614
